@@ -139,20 +139,20 @@
             @foreach ($allquestions as $all)
                 @php
 
-                    // if (isset($allanswer[$all->id])) {
-                    //     $userAnswer = $allanswer[$all->id];
-                    // } else {
-                    //     $userAnswer = null;
-                    // }
+                    if (isset($allanswer[$all->id])) {
+                        $userAnswer = $allanswer[$all->id];
+                    } else {
+                        $userAnswer = null;
+                    }
 
-                    // if (isset($skipQuestion[$all->id])) {
-                    //     $skipanswer = $skipQuestion[$all->id];
-                    // } else {
-                    //     $skipanswer = null;
-                    // }
+                    if (isset($skipQuestion[$all->id])) {
+                        $skipanswer = $skipQuestion[$all->id];
+                    } else {
+                        $skipanswer = null;
+                    }
 
-                    $userAnswer = $allanswer[$all->id] ?? null;
-                    $skipanswer = $skipQuestion[$all->id] ?? null;
+                    // $userAnswer = $allanswer[$all->id] ?? null;
+                    // $skipanswer = $skipQuestion[$all->id] ?? null;
 
                 @endphp
 
@@ -184,13 +184,8 @@
                     </p>
                 </div>
             @endforeach
-
-
-
         </div>
     </div>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

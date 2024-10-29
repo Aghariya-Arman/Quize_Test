@@ -133,7 +133,7 @@ class QuestionController extends Controller
     {
         $correctAns = session()->get('correctAnswer', '0');
         $allanswer = session()->get('answerall');
-        $skipQuestion = session('skipquestion');
+        $skipQuestion = session()->get('skipquestion');
 
         $allquestions = User::all();
 
@@ -148,10 +148,9 @@ class QuestionController extends Controller
         if ($question) {
             $correctans = $question->correctAnswer;
 
-            $skipQuestion = session()->get('skipquestion', '[]');
+            $skipQuestion = session()->get('skipquestion', []);
             $skipQuestion[$id] = $correctans;
-
-            session()->put('skipquestion',  $skipQuestion);
+            session()->put('skipquestion', $skipQuestion);
 
             return response()->json([
                 'status' => 'success',

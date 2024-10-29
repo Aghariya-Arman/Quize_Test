@@ -281,6 +281,10 @@
                     if (response.status == 'success') {
                         alert('correct answer ->  ' + response.correct +
                             'clicked ok to next question');
+
+                        setTimeout(function() {
+
+                        }, 100);
                     }
                 }
             });
